@@ -4,32 +4,31 @@ generate a logfile called 'output.txt' containing information about the validity
 computation is also logged
 
 
-Input File Format:
-K N
-(Sudoku)
---end-- (not part of file)
+Input File Format: \
+`K N` 
+(Sudoku) \
+--end-- (not part of file) \
 K is the number of threads, N is the dimension of the Sudoku (NxN)
 The Sudoku is given as N space separated lists of N numbers. An example is:
-1 2 3 4
-3 4 1 2 
-2 3 4 1
-4 1 2 3
+` 1 2 3 4 ` \
+` 3 4 1 2 ` \ 
+` 2 3 4 1 ` \
+` 4 1 2 3 ` 
 
-
-Execution:
-(On Linux)
+Execution: \ 
+(On Linux) 
 1) pthreads:
-    - To compile: gcc pthread.c -pthread -lm
-    - To execute: ./a.out
+    - To compile: `gcc pthread.c -pthread -lm`
+    - To execute: `./a.out`
 2) OpenMP:
-    - To compile: gcc -fopenmp OpenMP.c -lm
-    - To execute: ./a.out
+    - To compile: `gcc -fopenmp OpenMP.c -lm`
+    - To execute: `./a.out`
 
 Note:- No flag is required for linking the math library (-lm) or pthreads (-pthread) on MacOS. Running OpenMP might require the 
 installation of gcc.
 
 
-Output:
+Output: \ 
 The code will generate the file 'output.txt'. It contains:
 1) The indexed columns, with their validity
 2) The indexed rows, with their validity
@@ -38,9 +37,9 @@ The code will generate the file 'output.txt'. It contains:
 5) Time taken for execution.
 
 
-Early Termination:
-Uncomment all the lines with the comment '// UNCOMMENT FOR EARLY TERMINATION'
-Comment all the lines with the comment '// COMMENT FOR EARLY TERMINATION'
+Early Termination: \ 
+Uncomment all the lines with the comment '// UNCOMMENT FOR EARLY TERMINATION' \ 
+Comment all the lines with the comment '// COMMENT FOR EARLY TERMINATION' \ 
 
 - pthreads: If an anomaly is found, the global variable 'termcheck' is set to 1. When a thread runs the sudoku runner function, it checks for the value of termcheck, and exits if required.
 - OpenMP: The mechanism of early termination in OpenMP is similar. 'termcheck' is incremented if an anomaly is found, and a positive value of termcheck leads to continuing in all iterations of the loop (note that you can't use a break in an OpenMP for loop)
