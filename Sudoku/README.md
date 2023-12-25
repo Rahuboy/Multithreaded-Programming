@@ -9,11 +9,11 @@ Input File Format: \
 (Sudoku) \
 --end-- (not part of file) \
 K is the number of threads, N is the dimension of the Sudoku (NxN)
-The Sudoku is given as N space separated lists of N numbers. An example is:
-` 1 2 3 4 ` \
-` 3 4 1 2 ` \ 
-` 2 3 4 1 ` \
-` 4 1 2 3 ` 
+The Sudoku is given as N space separated lists of N numbers. An example is: \
+``` 1 2 3 4 
+ 3 4 1 2 
+ 2 3 4 1 
+ 4 1 2 3 ```
 
 Execution: \ 
 (On Linux) 
