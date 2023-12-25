@@ -1,4 +1,4 @@
-Overview:
+<!-- Overview: -->
 The C++ File reads input from a file (named 'inp.txt' and present in the same directory), creates the required number of threads, and 
 generates a logfile called 'output.txt' containing the value of pi (computed using the Monte Carlo Technique), the time taken in microseconds, and information about
 the random points generated.
